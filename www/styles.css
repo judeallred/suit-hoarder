@@ -55,29 +55,17 @@ body {
   margin: 0 auto;
 }
 
-/* Skip Link */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--color-primary);
-  color: white;
-  padding: 8px;
-  z-index: 100;
-  transition: top 0.3s;
-}
-
-.skip-link:focus {
-  top: 0;
-}
-
 /* Header styles */
 header {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
   text-align: center;
-  margin-bottom: var(--spacing-lg);
-  padding: var(--spacing-md) 0;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  border-radius: var(--border-radius);
   color: white;
   box-shadow: var(--shadow-md);
 }
@@ -176,9 +164,14 @@ li {
 
 /* Footer styles */
 footer {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
   text-align: center;
-  margin-top: var(--spacing-xl);
-  padding: var(--spacing-md);
+  margin-top: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   color: var(--color-text);
   opacity: 0.8;
 }
@@ -423,4 +416,25 @@ details summary:hover {
 
 .card.hearts, .card.diamonds {
   color: #E74C3C;
+}
+
+.cardfield-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(to bottom, #1a1a2e, #16213e);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.95);
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
 }

@@ -1,3 +1,74 @@
+// Cardfield animation
+class Card {
+  constructor(canvas) {
+    this.canvas = canvas;
+    this.ctx = canvas.getContext('2d');
+    this.reset();
+  }
+
+  reset() {
+    this.x = Math.random() * this.canvas.width;
+    this.y = Math.random() * this.canvas.height;
+    this.z = Math.random() * 1500 + 500;
+    this.size = 20;
+    this.suit = ['♠', '♣', '♥', '♦'][Math.floor(Math.random() * 4)];
+    this.color = this.suit === '♥' || this.suit === '♦' ? '#E74C3C' : '#2C3E50';
+  }
+
+  update() {
+    this.z -= 10;
+    if (this.z <= 0) {
+      this.reset();
+      this.z = 1500;
+    }
+    
+    const scale = (1500 - this.z) / 1500;
+    this.x = this.x + (Math.random() - 0.5) * 2;
+    this.y = this.y + (Math.random() - 0.5) * 2;
+    
+    // Keep within bounds
+    if (this.x < 0) this.x = this.canvas.width;
+    if (this.x > this.canvas.width) this.x = 0;
+    if (this.y < 0) this.y = this.canvas.height;
+    if (this.y > this.canvas.height) this.y = 0;
+    
+    const x = this.x;
+    const y = this.y;
+    const size = this.size * scale;
+    
+    this.ctx.fillStyle = this.color;
+    this.ctx.font = `${size}px Arial`;
+    this.ctx.fillText(this.suit, x, y);
+  }
+}
+
+// Initialize cardfield
+document.addEventListener('DOMContentLoaded', () => {
+  const canvas = document.getElementById('cardfield');
+  const ctx = canvas.getContext('2d');
+  
+  // Set canvas size
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+  
+  // Create cards
+  const cards = Array.from({ length: 100 }, () => new Card(canvas));
+  
+  // Animation loop
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    cards.forEach(card => card.update());
+    requestAnimationFrame(animate);
+  }
+  
+  animate();
+});
+
 // Utility function to scroll to a section smoothly
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
