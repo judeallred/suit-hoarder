@@ -128,7 +128,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // When details closes, update hash to just #example-games
         // When details opens, update hash to the currently active tab or default
         if (!this.open) {
-             window.history.replaceState(null, null, '#example-games');
+             // When details closes, remove the hash
+             window.history.replaceState(null, null, window.location.pathname + window.location.search);
         } else {
              // When opening, update hash to the current tab
              updateHash(); // Call updateHash without paneId to find the active pane
