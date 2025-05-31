@@ -7,38 +7,45 @@ class Card {
   }
 
   reset() {
+    // Start from random position across the screen
     this.x = Math.random() * this.canvas.width;
     this.y = Math.random() * this.canvas.height;
-    this.z = Math.random() * 1500 + 500;
+    this.z = Math.random() * 2000 + 1000;
     this.size = 20;
     this.suit = ['♠', '♣', '♥', '♦'][Math.floor(Math.random() * 4)];
-    this.color = this.suit === '♥' || this.suit === '♦' ? '#E74C3C' : '#2C3E50';
+    this.color = this.suit === '♥' || this.suit === '♦' ? '#E74C3C' : '#FFFFFF';
+    
+    // Calculate random angle for straight line movement
+    this.angle = Math.random() * Math.PI * 2;
+    this.speed = 2 + Math.random() * 2;
   }
 
   update() {
-    this.z -= 10;
+    this.z -= 20;
     if (this.z <= 0) {
       this.reset();
-      this.z = 1500;
+      this.z = 3000;
     }
     
-    const scale = (1500 - this.z) / 1500;
-    this.x = this.x + (Math.random() - 0.5) * 2;
-    this.y = this.y + (Math.random() - 0.5) * 2;
+    // Stronger perspective effect
+    const scale = Math.pow((3000 - this.z) / 3000, 2) * 3;
     
-    // Keep within bounds
-    if (this.x < 0) this.x = this.canvas.width;
-    if (this.x > this.canvas.width) this.x = 0;
-    if (this.y < 0) this.y = this.canvas.height;
-    if (this.y > this.canvas.height) this.y = 0;
+    // Move in straight line based on angle, but reduce lateral movement as z decreases
+    const lateralSpeed = this.speed * (this.z / 3000);
+    this.x += Math.cos(this.angle) * lateralSpeed;
+    this.y += Math.sin(this.angle) * lateralSpeed;
     
-    const x = this.x;
-    const y = this.y;
+    // Reset position if out of bounds
+    if (this.x < -20 || this.x > this.canvas.width + 20 || 
+        this.y < -20 || this.y > this.canvas.height + 20) {
+      this.reset();
+    }
+    
+    // Draw card
     const size = this.size * scale;
-    
     this.ctx.fillStyle = this.color;
     this.ctx.font = `${size}px Arial`;
-    this.ctx.fillText(this.suit, x, y);
+    this.ctx.fillText(this.suit, this.x, this.y);
   }
 }
 
@@ -56,12 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', resizeCanvas);
   resizeCanvas();
   
-  // Create cards
-  const cards = Array.from({ length: 100 }, () => new Card(canvas));
+  // Create many more cards
+  const cards = Array.from({ length: 400 }, () => new Card(canvas));
   
   // Animation loop
   function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Clear with more transparent black to make trails last longer
+    ctx.fillStyle = 'rgba(42, 42, 74, 0.04)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
     cards.forEach(card => card.update());
     requestAnimationFrame(animate);
   }
