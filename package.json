@@ -14,7 +14,8 @@
         "autofix:js": "eslint www --fix",
         "autofix:css": "stylelint \"www/**/*.css\" --fix",
         "autofix:html": "htmlhint \"www/**/*.html\" || exit 0",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "dev": "live-server --port=3000 --open=index.html www"
     },
     "lint-staged": {
         "www/*.js": [
@@ -44,6 +45,7 @@
         "htmlhint": "^1.0.0",
         "husky": "^8.0.0",
         "lint-staged": "^13.0.0",
+        "live-server": "^1.2.2",
         "prettier": "^3.0.0",
         "stylelint": "^15.0.0",
         "stylelint-config-prettier": "^9.0.5",
