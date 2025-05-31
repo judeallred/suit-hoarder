@@ -2,25 +2,43 @@
 <html lang="en">
   <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5QDSGWBB');</script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5QDSGWBB");
+    </script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Learn how to play Suit Hoarder, a fun and exciting card game for kids and families!" />
-    <title>Suit Hoarder - A fast-paced card game of deduction and misdirection</title>
+    <meta
+      name="description"
+      content="Learn how to play Suit Hoarder, a fun and exciting card game for kids and families!"
+    />
+    <title>
+      Suit Hoarder - A fast-paced card game of deduction and misdirection
+    </title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QDSGWBB"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5QDSGWBB"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <canvas id="cardfield" class="cardfield-background"></canvas>
-    
+
     <header role="banner">
       <h1>Suit Hoarder</h1>
       <p class="subtitle">A fast-paced game of deduction and misdirection</p>
@@ -30,8 +48,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <section id="introduction" aria-labelledby="intro-heading">
         <h2 id="intro-heading">Welcome to Suit Hoarder</h2>
         <p>
-          Get ready for a fun card game where you try to collect as many cards of the same suit as possible. 
-          It's like a treasure hunt, but with cards. You can play with 2 or more players, and it's easy to learn.
+          Get ready for a fun card game where you try to collect as many cards
+          of the same suit as possible. It's like a treasure hunt, but with
+          cards. You can play with 2 or more players, and it's easy to learn.
         </p>
       </section>
 
@@ -39,28 +58,119 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2 id="setup-heading">Let's Get Started</h2>
         <ul class="setup-list">
           <li>Use a standard 52-card deck (no jokers needed)</li>
-          <li>Choose a dealer. Each player will take turns being dealer in future games</li>
+          <li>
+            Choose a dealer. Each player will take turns being dealer in future
+            games
+          </li>
           <li>Deal cards in groups of 3 until each player has 6 cards</li>
           <li>
-            Put the rest of the cards in the middle—this is your draw pile. Mentally allocate four discard piles around the draw pile, one for each suit:
+            Put the rest of the cards in the middle—this is your draw pile.
+            Mentally allocate four discard piles around the draw pile, one for
+            each suit:
             <figure class="setup-illustration">
-              <figcaption class="visually-hidden">Illustration: Deck of cards in the center, with four discard piles (Clubs, Diamonds, Hearts, Spades) surrounding it.</figcaption>
-              <svg viewBox="0 0 220 180" width="220" height="180" aria-hidden="true">
+              <figcaption class="visually-hidden">
+                Illustration: Deck of cards in the center, with four discard
+                piles (Clubs, Diamonds, Hearts, Spades) surrounding it.
+              </figcaption>
+              <svg
+                viewBox="0 0 220 180"
+                width="220"
+                height="180"
+                aria-hidden="true"
+              >
                 <!-- Deck in the center -->
-                <rect x="90" y="70" width="40" height="40" rx="6" fill="#fff" stroke="#2C3E50" stroke-width="2"/>
-                <text x="110" y="95" text-anchor="middle" font-size="14" fill="#2C3E50" font-weight="bold">Deck</text>
+                <rect
+                  x="90"
+                  y="70"
+                  width="40"
+                  height="40"
+                  rx="6"
+                  fill="#fff"
+                  stroke="#2C3E50"
+                  stroke-width="2"
+                />
+                <text
+                  x="110"
+                  y="95"
+                  text-anchor="middle"
+                  font-size="14"
+                  fill="#2C3E50"
+                  font-weight="bold"
+                >
+                  Deck
+                </text>
                 <!-- Clubs pile (top) -->
-                <circle cx="110" cy="30" r="18" fill="#f7f9fc" stroke="#2C3E50" stroke-width="2"/>
-                <text x="110" y="36" text-anchor="middle" font-size="20" fill="#2C3E50">♣</text>
+                <circle
+                  cx="110"
+                  cy="30"
+                  r="18"
+                  fill="#f7f9fc"
+                  stroke="#2C3E50"
+                  stroke-width="2"
+                />
+                <text
+                  x="110"
+                  y="36"
+                  text-anchor="middle"
+                  font-size="20"
+                  fill="#2C3E50"
+                >
+                  ♣
+                </text>
                 <!-- Diamonds pile (right) -->
-                <circle cx="180" cy="90" r="18" fill="#f7f9fc" stroke="#E74C3C" stroke-width="2"/>
-                <text x="180" y="96" text-anchor="middle" font-size="20" fill="#E74C3C">♦</text>
+                <circle
+                  cx="180"
+                  cy="90"
+                  r="18"
+                  fill="#f7f9fc"
+                  stroke="#E74C3C"
+                  stroke-width="2"
+                />
+                <text
+                  x="180"
+                  y="96"
+                  text-anchor="middle"
+                  font-size="20"
+                  fill="#E74C3C"
+                >
+                  ♦
+                </text>
                 <!-- Hearts pile (bottom) -->
-                <circle cx="110" cy="150" r="18" fill="#f7f9fc" stroke="#E74C3C" stroke-width="2"/>
-                <text x="110" y="156" text-anchor="middle" font-size="20" fill="#E74C3C">♥</text>
+                <circle
+                  cx="110"
+                  cy="150"
+                  r="18"
+                  fill="#f7f9fc"
+                  stroke="#E74C3C"
+                  stroke-width="2"
+                />
+                <text
+                  x="110"
+                  y="156"
+                  text-anchor="middle"
+                  font-size="20"
+                  fill="#E74C3C"
+                >
+                  ♥
+                </text>
                 <!-- Spades pile (left) -->
-                <circle cx="40" cy="90" r="18" fill="#f7f9fc" stroke="#2C3E50" stroke-width="2"/>
-                <text x="40" y="96" text-anchor="middle" font-size="20" fill="#2C3E50">♠</text>
+                <circle
+                  cx="40"
+                  cy="90"
+                  r="18"
+                  fill="#f7f9fc"
+                  stroke="#2C3E50"
+                  stroke-width="2"
+                />
+                <text
+                  x="40"
+                  y="96"
+                  text-anchor="middle"
+                  font-size="20"
+                  fill="#2C3E50"
+                >
+                  ♠
+                </text>
               </svg>
             </figure>
           </li>
@@ -72,31 +182,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2 id="gameplay-heading">What Can You Do?</h2>
         <p>On your turn, you can do one of these things:</p>
         <ul class="action-list">
-          <li>Discard any number of cards from the same suit into that suit's pile, then draw that many new cards</li>
-          <li>Discard a Queen into its own suit pile to make your hand smaller (you don't draw a new card)</li>
-          <li>Play a Jack on another player to make their hand bigger (then draw a card)</li>
-          <li>Discard four cards of the same number (like four 7s) into their respective suit piles, then draw three new cards</li>
+          <li>
+            Discard any number of cards from the same suit into that suit's
+            pile, then draw that many new cards
+          </li>
+          <li>
+            Discard a Queen into its own suit pile to make your hand smaller
+            (you don't draw a new card)
+          </li>
+          <li>
+            Play a Jack on another player to make their hand bigger (then draw a
+            card)
+          </li>
+          <li>
+            Discard four cards of the same number (like four 7s) into their
+            respective suit piles, then draw three new cards
+          </li>
         </ul>
-        <p>After you do one of these things, your turn is immediately over. Play continues clockwise.</p>
+        <p>
+          After you do one of these things, your turn is immediately over. Play
+          continues clockwise.
+        </p>
       </section>
 
       <section id="rules" aria-labelledby="rules-heading">
         <h2 id="rules-heading">Special Rules</h2>
-        
+
         <div class="rule-group">
           <h3 id="winning-heading">How to Win</h3>
           <p>Winning anytime:</p>
           <ul class="winning-list">
-            <li>If all your cards are the same suit (including any wild Aces that contribute to that suit), immediately show your hand and say "I win"
+            <li>
+              If all your cards are the same suit (including any wild Aces that
+              contribute to that suit), immediately show your hand and say "I
+              win"
               <ul>
-                <li>Be careful! If you show your hand and you were wrong about having all the same suit, you lose</li>
-                <li>💡 Tip: You'll usually win right after your turn ends - either by drawing the final card you needed, or by playing a Queen and having only one suit left over</li>
+                <li>
+                  Be careful! If you show your hand and you were wrong about
+                  having all the same suit, you lose
+                </li>
+                <li>
+                  💡 Tip: You'll usually win right after your turn ends - either
+                  by drawing the final card you needed, or by playing a Queen
+                  and having only one suit left over
+                </li>
               </ul>
             </li>
-            <li>Say "Guess" to stop all play, then pick an opponent and guess their suit
+            <li>
+              Say "Guess" to stop all play, then pick an opponent and guess
+              their suit
               <ul>
-                <li>You win if you correctly guess their majority suit (including any wild Aces contributing to that suit)</li>
-                <li>You lose if:
+                <li>
+                  You win if you correctly guess their majority suit (including
+                  any wild Aces contributing to that suit)
+                </li>
+                <li>
+                  You lose if:
                   <ul>
                     <li>There is a tie for majority suit in their hand</li>
                     <li>You did not guess their majority suit</li>
@@ -104,10 +245,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </li>
               </ul>
             </li>
-            <li>Trick your opponents into guessing wrong
+            <li>
+              Trick your opponents into guessing wrong
               <ul>
-                <li>If any opponent loses by incorrectly guessing your suit, you win</li>
-                <li>This means you can win even if you don't have all cards of the same suit!</li>
+                <li>
+                  If any opponent loses by incorrectly guessing your suit, you
+                  win
+                </li>
+                <li>
+                  This means you can win even if you don't have all cards of the
+                  same suit!
+                </li>
               </ul>
             </li>
           </ul>
@@ -116,109 +264,515 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="rule-group">
           <h3 id="special-cards-heading">Magic Cards</h3>
           <ul class="card-list">
-            <li><strong>Jack (J):</strong> The tricky card. Play it face-down in another player's hand - they'll see the back of the card and can't use it until they discard it on their turn. Then draw a new card for yourself</li>
-            <li><strong>Queen (Q):</strong> The shrinking card. Play it to make your hand smaller - you don't draw a new card after playing it, so your hand size goes down by one</li>
-            <li><strong>Ace (A):</strong> The wild card. It can be any suit of the same color:
+            <li>
+              <strong>Jack (J):</strong> The tricky card. Play it face-down in
+              another player's hand - they'll see the back of the card and can't
+              use it until they discard it on their turn. Then draw a new card
+              for yourself
+            </li>
+            <li>
+              <strong>Queen (Q):</strong> The shrinking card. Play it to make
+              your hand smaller - you don't draw a new card after playing it, so
+              your hand size goes down by one
+            </li>
+            <li>
+              <strong>Ace (A):</strong> The wild card. It can be any suit of the
+              same color:
               <ul>
-                <li>Ace of Spades can be either a Spade or a Club (both black)</li>
-                <li>Ace of Hearts can be either a Heart or a Diamond (both red)</li>
+                <li>
+                  Ace of Spades can be either a Spade or a Club (both black)
+                </li>
+                <li>
+                  Ace of Hearts can be either a Heart or a Diamond (both red)
+                </li>
               </ul>
-              <p class="tip">💡 Tip: Watch what Aces other players discard - it might tell you what suit they're NOT collecting</p>
+              <p class="tip">
+                💡 Tip: Watch what Aces other players discard - it might tell
+                you what suit they're NOT collecting
+              </p>
             </li>
           </ul>
         </div>
 
         <div class="rule-group">
           <h3 id="draw-pile-heading">Running Out of Cards?</h3>
-          <p>If you need to draw a card but there are no cards left in the draw pile:</p>
+          <p>
+            If you need to draw a card but there are no cards left in the draw
+            pile:
+          </p>
           <ol class="draw-pile-list">
             <li>Mix up all the cards from the four suit piles</li>
             <li>Make a new draw pile</li>
             <li>Keep playing</li>
           </ol>
         </div>
-
-        </section>
+      </section>
 
       <section id="example-games" aria-labelledby="example-games-heading">
         <h2 id="example-games-heading">Example Games</h2>
         <div class="example-games">
           <div class="tabs">
             <div class="tab-buttons" role="tablist">
-              <button class="tab-button active" role="tab" aria-selected="true" aria-controls="pane-building-collection" id="tab-building-collection">The Squirrel's Stash</button>
-              <button class="tab-button" role="tab" aria-selected="false" aria-controls="pane-guess-bluff" id="tab-guess-bluff">Guess and Bluff</button>
-              <button class="tab-button" role="tab" aria-selected="false" aria-controls="pane-tie-breaker" id="tab-tie-breaker">Tie Breaker</button>
-              <button class="tab-button" role="tab" aria-selected="false" aria-controls="pane-jack-attack" id="tab-jack-attack">Jack Attack</button>
+              <button
+                class="tab-button active"
+                role="tab"
+                aria-selected="true"
+                aria-controls="pane-building-collection"
+                id="tab-building-collection"
+              >
+                The Squirrel's Stash
+              </button>
+              <button
+                class="tab-button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="pane-guess-bluff"
+                id="tab-guess-bluff"
+              >
+                Guess and Bluff
+              </button>
+              <button
+                class="tab-button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="pane-tie-breaker"
+                id="tab-tie-breaker"
+              >
+                Tie Breaker
+              </button>
+              <button
+                class="tab-button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="pane-jack-attack"
+                id="tab-jack-attack"
+              >
+                Jack Attack
+              </button>
             </div>
 
             <div class="tab-content">
-              <div id="pane-building-collection" class="tab-pane active" role="tabpanel" aria-labelledby="tab-building-collection">
+              <div
+                id="pane-building-collection"
+                class="tab-pane active"
+                role="tabpanel"
+                aria-labelledby="tab-building-collection"
+              >
                 <div class="example">
                   <h4>The Squirrel's Stash</h4>
                   <div class="game-progression">
-                    <p>This game shows a player focusing on collecting a suit and winning that way.</p>
-                    <p><strong>Setup:</strong> Players Owl, Squirrel, and Guppy are playing. Owl is dealer. Squirrel goes first.</p>
-                    <p><strong>Hand 1 (Squirrel):</strong> Hand: <span class="card clubs">♣K</span>, <span class="card diamonds">♦3</span>, <span class="card hearts">♥8</span>, <span class="card spades">♠A</span>, <span class="card clubs">♣5</span>, <span class="card clubs">♣9</span>. Discards <span class="card diamonds">♦3</span> to the Diamonds pile. Draws <span class="card clubs">♣2</span>.</p>
-                    <p><strong>Hand 1 (Guppy):</strong> Hand: <span class="card hearts">♥2</span>, <span class="card spades">♠7</span>, <span class="card diamonds">♦10</span>, <span class="card hearts">♥Q</span>, <span class="card clubs">♣J</span>, <span class="card spades">♠4</span>. Discards <span class="card spades">♠7</span> to the Spades pile. Draws <span class="card diamonds">♦6</span>.</p>
-                    <p><strong>Hand 1 (Owl):</strong> Hand: <span class="card diamonds">♦A</span>, <span class="card hearts">♥6</span>, <span class="card spades">♠8</span>, <span class="card hearts">♥J</span>, <span class="card clubs">♣10</span>, <span class="card diamonds">♦5</span>. Discards <span class="card clubs">♣10</span> to the Clubs pile. Draws <span class="card hearts">♥9</span>.</p>
-                    <p><strong>Hand 2 (Squirrel):</strong> Hand: <span class="card clubs">♣K</span>, <span class="card hearts">♥8</span>, <span class="card spades">♠A</span>, <span class="card clubs">♣5</span>, <span class="card clubs">♣9</span>, <span class="card clubs">♣2</span>. Discards <span class="card hearts">♥8</span> to the Hearts pile. Draws <span class="card clubs">♣7</span>.</p>
-                    <p><strong>Hand 2 (Guppy):</strong> Hand: <span class="card hearts">♥2</span>, <span class="card diamonds">♦10</span>, <span class="card hearts">♥Q</span>, <span class="card clubs">♣J</span>, <span class="card spades">♠4</span>, <span class="card diamonds">♦6</span>. Discards <span class="card hearts">♥2</span> to the Hearts pile. Draws <span class="card spades">♠K</span>.</p>
-                    <p><strong>Hand 2 (Owl):</strong> Hand: <span class="card diamonds">♦A</span>, <span class="card hearts">♥6</span>, <span class="card spades">♠8</span>, <span class="card hearts">♥J</span>, <span class="card diamonds">♦5</span>, <span class="card hearts">♥9</span>. Discard <span class="card spades">♠8</span> to the Spades pile. Draws <span class="card diamonds">♦4</span>.</p>
-                    <p><strong>Hand 3 (Squirrel):</strong> At the start of Hand 3, Squirrel's hand is: <span class="card clubs">♣K</span>, <span class="card spades">♠A</span>, <span class="card clubs">♣5</span>, <span class="card clubs">♣9</span>, <span class="card clubs">♣2</span>, <span class="card clubs">♣7</span>. With the <span class="card spades">♠A</span> counting as a Club, Squirrel has all Clubs! Squirrel shows their hand and says "I win!". Squirrel wins the game.</p>
+                    <p>
+                      This game shows a player focusing on collecting a suit and
+                      winning that way.
+                    </p>
+                    <p>
+                      <strong>Setup:</strong> Players Owl, Squirrel, and Guppy
+                      are playing. Owl is dealer. Squirrel goes first.
+                    </p>
+                    <p>
+                      <strong>Hand 1 (Squirrel):</strong> Hand:
+                      <span class="card clubs">♣K</span>,
+                      <span class="card diamonds">♦3</span>,
+                      <span class="card hearts">♥8</span>,
+                      <span class="card spades">♠A</span>,
+                      <span class="card clubs">♣5</span>,
+                      <span class="card clubs">♣9</span>. Discards
+                      <span class="card diamonds">♦3</span> to the Diamonds
+                      pile. Draws <span class="card clubs">♣2</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 1 (Guppy):</strong> Hand:
+                      <span class="card hearts">♥2</span>,
+                      <span class="card spades">♠7</span>,
+                      <span class="card diamonds">♦10</span>,
+                      <span class="card hearts">♥Q</span>,
+                      <span class="card clubs">♣J</span>,
+                      <span class="card spades">♠4</span>. Discards
+                      <span class="card spades">♠7</span> to the Spades pile.
+                      Draws <span class="card diamonds">♦6</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 1 (Owl):</strong> Hand:
+                      <span class="card diamonds">♦A</span>,
+                      <span class="card hearts">♥6</span>,
+                      <span class="card spades">♠8</span>,
+                      <span class="card hearts">♥J</span>,
+                      <span class="card clubs">♣10</span>,
+                      <span class="card diamonds">♦5</span>. Discards
+                      <span class="card clubs">♣10</span> to the Clubs pile.
+                      Draws <span class="card hearts">♥9</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 2 (Squirrel):</strong> Hand:
+                      <span class="card clubs">♣K</span>,
+                      <span class="card hearts">♥8</span>,
+                      <span class="card spades">♠A</span>,
+                      <span class="card clubs">♣5</span>,
+                      <span class="card clubs">♣9</span>,
+                      <span class="card clubs">♣2</span>. Discards
+                      <span class="card hearts">♥8</span> to the Hearts pile.
+                      Draws <span class="card clubs">♣7</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 2 (Guppy):</strong> Hand:
+                      <span class="card hearts">♥2</span>,
+                      <span class="card diamonds">♦10</span>,
+                      <span class="card hearts">♥Q</span>,
+                      <span class="card clubs">♣J</span>,
+                      <span class="card spades">♠4</span>,
+                      <span class="card diamonds">♦6</span>. Discards
+                      <span class="card hearts">♥2</span> to the Hearts pile.
+                      Draws <span class="card spades">♠K</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 2 (Owl):</strong> Hand:
+                      <span class="card diamonds">♦A</span>,
+                      <span class="card hearts">♥6</span>,
+                      <span class="card spades">♠8</span>,
+                      <span class="card hearts">♥J</span>,
+                      <span class="card diamonds">♦5</span>,
+                      <span class="card hearts">♥9</span>. Discard
+                      <span class="card spades">♠8</span> to the Spades pile.
+                      Draws <span class="card diamonds">♦4</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 3 (Squirrel):</strong> At the start of Hand
+                      3, Squirrel's hand is:
+                      <span class="card clubs">♣K</span>,
+                      <span class="card spades">♠A</span>,
+                      <span class="card clubs">♣5</span>,
+                      <span class="card clubs">♣9</span>,
+                      <span class="card clubs">♣2</span>,
+                      <span class="card clubs">♣7</span>. With the
+                      <span class="card spades">♠A</span> counting as a Club,
+                      Squirrel has all Clubs! Squirrel shows their hand and says
+                      "I win!". Squirrel wins the game.
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <div id="pane-guess-bluff" class="tab-pane" role="tabpanel" aria-labelledby="tab-guess-bluff">
+              <div
+                id="pane-guess-bluff"
+                class="tab-pane"
+                role="tabpanel"
+                aria-labelledby="tab-guess-bluff"
+              >
                 <div class="example">
                   <h4>The Guess and the Bluff</h4>
                   <div class="game-progression">
-                    <p>This game shows how the guessing and tricking mechanics can play out.</p>
-                    <p><strong>Setup:</strong> Players Fox and Bear are playing. Fox is dealer. Bear goes first.</p>
-                    <p><strong>Hand 1 (Bear):</strong> Hand: <span class="card hearts">♥4</span>, <span class="card spades">♠8</span>, <span class="card clubs">♣A</span>, <span class="card diamonds">♦J</span>, <span class="card hearts">♥K</span>, <span class="card spades">♠3</span>. Discards <span class="card diamonds">♦J</span> to the Diamonds pile. Draws <span class="card spades">♠10</span>.</p>
-                    <p><strong>Hand 1 (Fox):):</strong> Hand: <span class="card clubs">♣2</span>, <span class="card hearts">♥7</span>, <span class="card spades">♠Q</span>, <span class="card diamonds">♦5</span>, <span class="card clubs">♣9</span>, <span class="card hearts">♥J</span>. Discards <span class="card diamonds">♦5</span> to the Diamonds pile. Draws <span class="card spades">♠6</span>.</p>
-                    <p><strong>Hand 2 (Bear):</strong> Hand: <span class="card hearts">♥4</span>, <span class="card spades">♠8</span>, <span class="card clubs">♣A</span>, <span class="card hearts">♥K</span>, <span class="card spades">♠3</span>, <span class="card spades">♠10</span>. Discards <span class="card hearts">♥4</span> to the Hearts pile. Draws <span class="card clubs">♣K</span>.</p>
-                    <p><strong>Hand 2 (Fox):):</strong> Hand: <span class="card clubs">♣2</span>, <span class="card hearts">♥7</span>, <span class="card spades">♠Q</span>, <span class="card clubs">♣9</span>, <span class="card hearts">♥J</span>, <span class="card spades">♠6</span>. Discards <span class="card hearts">♥7</span> to the Hearts pile. Draws <span class="card clubs">♣8</span>.</p>
-                    <p><strong>Hand 3 (Bear):):</strong> Hand: <span class="card spades">♠8</span>, <span class="card clubs">♣A</span>, <span class="card hearts">♥K</span>, <span class="card spades">♠3</span>, <span class="card spades">♠10</span>, <span class="card clubs">♣K</span>. Discards <span class="card hearts">♥K</span> to the Hearts pile. Draws <span class="card spades">♠2</span>.</p>
-                    <p><strong>Hand 3 (Fox):):</strong> Hand: <span class="card clubs">♣2</span>, <span class="card spades">♠Q</span>, <span class="card clubs">♣9</span>, <span class="card hearts">♥J</span>, <span class="card spades">♠6</span>, <span class="card clubs">♣8</span>. Discards <span class="card hearts">♥J</span> to the Hearts pile. Draws <span class="card diamonds">♦9</span>.</p>
-                    <p><strong>Hand 4 (Bear):):</strong> Hand: <span class="card spades">♠8</span>, <span class="card clubs">♣A</span>, <span class="card spades">♠3</span>, <span class="card spades">♠10</span>, <span class="card clubs">♣K</span>, <span class="card spades">♠2</span>. Bear has 4 Spades, 2 Clubs (Ace can be Club). Decides to bluff by discarding <span class="card clubs">♣K</span> to the Clubs pile. Draws <span class="card spades">♠7</span>.</p>
-                    <p>Bear now has <span class="card spades">♠8</span>, <span class="card clubs">♣A</span>, <span class="card spades">♠3</span>, <span class="card spades">♠10</span>, <span class="card spades">♠2</span>, <span class="card spades">♠7</span>. With the <span class="card clubs">♣A</span> counting as a Spade, Bear has all Spades! Bear shows their hand and says "I win!". Bear wins the game.</p>
-                    <p><strong>Note:</strong> Fox was about to guess "Clubs" for Bear, but Bear won before Fox could make their guess.</p>
+                    <p>
+                      This game shows how the guessing and tricking mechanics
+                      can play out.
+                    </p>
+                    <p>
+                      <strong>Setup:</strong> Players Fox and Bear are playing.
+                      Fox is dealer. Bear goes first.
+                    </p>
+                    <p>
+                      <strong>Hand 1 (Bear):</strong> Hand:
+                      <span class="card hearts">♥4</span>,
+                      <span class="card spades">♠8</span>,
+                      <span class="card clubs">♣A</span>,
+                      <span class="card diamonds">♦J</span>,
+                      <span class="card hearts">♥K</span>,
+                      <span class="card spades">♠3</span>. Discards
+                      <span class="card diamonds">♦J</span> to the Diamonds
+                      pile. Draws <span class="card spades">♠10</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 1 (Fox):):</strong> Hand:
+                      <span class="card clubs">♣2</span>,
+                      <span class="card hearts">♥7</span>,
+                      <span class="card spades">♠Q</span>,
+                      <span class="card diamonds">♦5</span>,
+                      <span class="card clubs">♣9</span>,
+                      <span class="card hearts">♥J</span>. Discards
+                      <span class="card diamonds">♦5</span> to the Diamonds
+                      pile. Draws <span class="card spades">♠6</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 2 (Bear):</strong> Hand:
+                      <span class="card hearts">♥4</span>,
+                      <span class="card spades">♠8</span>,
+                      <span class="card clubs">♣A</span>,
+                      <span class="card hearts">♥K</span>,
+                      <span class="card spades">♠3</span>,
+                      <span class="card spades">♠10</span>. Discards
+                      <span class="card hearts">♥4</span> to the Hearts pile.
+                      Draws <span class="card clubs">♣K</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 2 (Fox):):</strong> Hand:
+                      <span class="card clubs">♣2</span>,
+                      <span class="card hearts">♥7</span>,
+                      <span class="card spades">♠Q</span>,
+                      <span class="card clubs">♣9</span>,
+                      <span class="card hearts">♥J</span>,
+                      <span class="card spades">♠6</span>. Discards
+                      <span class="card hearts">♥7</span> to the Hearts pile.
+                      Draws <span class="card clubs">♣8</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 3 (Bear):):</strong> Hand:
+                      <span class="card spades">♠8</span>,
+                      <span class="card clubs">♣A</span>,
+                      <span class="card hearts">♥K</span>,
+                      <span class="card spades">♠3</span>,
+                      <span class="card spades">♠10</span>,
+                      <span class="card clubs">♣K</span>. Discards
+                      <span class="card hearts">♥K</span> to the Hearts pile.
+                      Draws <span class="card spades">♠2</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 3 (Fox):):</strong> Hand:
+                      <span class="card clubs">♣2</span>,
+                      <span class="card spades">♠Q</span>,
+                      <span class="card clubs">♣9</span>,
+                      <span class="card hearts">♥J</span>,
+                      <span class="card spades">♠6</span>,
+                      <span class="card clubs">♣8</span>. Discards
+                      <span class="card hearts">♥J</span> to the Hearts pile.
+                      Draws <span class="card diamonds">♦9</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 4 (Bear):):</strong> Hand:
+                      <span class="card spades">♠8</span>,
+                      <span class="card clubs">♣A</span>,
+                      <span class="card spades">♠3</span>,
+                      <span class="card spades">♠10</span>,
+                      <span class="card clubs">♣K</span>,
+                      <span class="card spades">♠2</span>. Bear has 4 Spades, 2
+                      Clubs (Ace can be Club). Decides to bluff by discarding
+                      <span class="card clubs">♣K</span> to the Clubs pile.
+                      Draws <span class="card spades">♠7</span>.
+                    </p>
+                    <p>
+                      Bear now has <span class="card spades">♠8</span>,
+                      <span class="card clubs">♣A</span>,
+                      <span class="card spades">♠3</span>,
+                      <span class="card spades">♠10</span>,
+                      <span class="card spades">♠2</span>,
+                      <span class="card spades">♠7</span>. With the
+                      <span class="card clubs">♣A</span> counting as a Spade,
+                      Bear has all Spades! Bear shows their hand and says "I
+                      win!". Bear wins the game.
+                    </p>
+                    <p>
+                      <strong>Note:</strong> Fox was about to guess "Clubs" for
+                      Bear, but Bear won before Fox could make their guess.
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <div id="pane-tie-breaker" class="tab-pane" role="tabpanel" aria-labelledby="tab-tie-breaker">
+              <div
+                id="pane-tie-breaker"
+                class="tab-pane"
+                role="tabpanel"
+                aria-labelledby="tab-tie-breaker"
+              >
                 <div class="example">
                   <h4>The Tie Breaker</h4>
                   <div class="game-progression">
-                    <p>This game shows a player losing by guessing when there is a tie for the majority suit.</p>
-                    <p><strong>Setup:</strong> Players Tiger and Zebra are playing. Tiger is dealer. Zebra goes first.</p>
-                    <p><strong>Hand 1 (Zebra):</strong> Hand: <span class="card hearts">♥5</span>, <span class="card spades">♠2</span>, <span class="card clubs">♣8</span>, <span class="card diamonds">♦K</span>, <span class="card hearts">♥9</span>, <span class="card spades">♠Q</span>. Discards <span class="card clubs">♣8</span>. Draws <span class="card diamonds">♦7</span>.</p>
-                    <p><strong>Hand 1 (Tiger):):</strong> Hand: <span class="card clubs">♣3</span>, <span class="card hearts">♥A</span>, <span class="card spades">♠5</span>, <span class="card diamonds">♦10</span>, <span class="card clubs">♣6</span>, <span class="card hearts">♥J</span>. Discards <span class="card spades">♠5</span>. Draws <span class="card hearts">♥4</span>.</p>
-                    <p><strong>Hand 2 (Zebra):):</strong> Hand: <span class="card hearts">♥5</span>, <span class="card spades">♠2</span>, <span class="card diamonds">♦K</span>, <span class="card hearts">♥9</span>, <span class="card spades">♠Q</span>, <span class="card diamonds">♦7</span>. Discards <span class="card spades">♠2</span>. Draws <span class="card hearts">♥10</span>.</p>
-                    <p><strong>Hand 2 (Tiger):):</strong> Hand: <span class="card clubs">♣3</span>, <span class="card hearts">♥A</span>, <span class="card clubs">♣6</span>, <span class="card hearts">♥J</span>, <span class="card hearts">♥4</span>. Discards <span class="card diamonds">♦10</span>. Draws <span class="card clubs">♣Q</span>.</p>
-                    <p><strong>Hand 3 (Zebra):):</strong> Hand: <span class="card hearts">♥5</span>, <span class="card diamonds">♦K</span>, <span class="card hearts">♥9</span>, <span class="card spades">♠Q</span>, <span class="card diamonds">♦7</span>, <span class="card hearts">♥10</span>. Discards <span class="card spades">♠Q</span>. Draws <span class="card diamonds">♦J</span>.</p>
-                    <p><strong>Hand 3 (Tiger):):</strong> Hand: <span class="card clubs">♣3</span>, <span class="card hearts">♥A</span>, <span class="card clubs">♣6</span>, <span class="card hearts">♥J</span>, <span class="card hearts">♥4</span>, <span class="card clubs">♣Q</span>. Tiger has 3 Hearts (counting Ace) and 3 Clubs. Sees Zebra discarding Spades and Diamonds. Says "Guess" and guesses "Hearts" for Zebra.</p>
-                    <p>Zebra reveals hand: <span class="card hearts">♥5</span>, <span class="card diamonds">♦K</span>, <span class="card hearts">♥9</span>, <span class="card diamonds">♦7</span>, <span class="card hearts">♥10</span>, <span class="card diamonds">♦J</span>. Zebra has 3 Hearts and 3 Diamonds. There is a tie for the majority suit. Tiger's guess was incorrect because of the tie. Tiger loses.</p>
+                    <p>
+                      This game shows a player losing by guessing when there is
+                      a tie for the majority suit.
+                    </p>
+                    <p>
+                      <strong>Setup:</strong> Players Tiger and Zebra are
+                      playing. Tiger is dealer. Zebra goes first.
+                    </p>
+                    <p>
+                      <strong>Hand 1 (Zebra):</strong> Hand:
+                      <span class="card hearts">♥5</span>,
+                      <span class="card spades">♠2</span>,
+                      <span class="card clubs">♣8</span>,
+                      <span class="card diamonds">♦K</span>,
+                      <span class="card hearts">♥9</span>,
+                      <span class="card spades">♠Q</span>. Discards
+                      <span class="card clubs">♣8</span>. Draws
+                      <span class="card diamonds">♦7</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 1 (Tiger):):</strong> Hand:
+                      <span class="card clubs">♣3</span>,
+                      <span class="card hearts">♥A</span>,
+                      <span class="card spades">♠5</span>,
+                      <span class="card diamonds">♦10</span>,
+                      <span class="card clubs">♣6</span>,
+                      <span class="card hearts">♥J</span>. Discards
+                      <span class="card spades">♠5</span>. Draws
+                      <span class="card hearts">♥4</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 2 (Zebra):):</strong> Hand:
+                      <span class="card hearts">♥5</span>,
+                      <span class="card spades">♠2</span>,
+                      <span class="card diamonds">♦K</span>,
+                      <span class="card hearts">♥9</span>,
+                      <span class="card spades">♠Q</span>,
+                      <span class="card diamonds">♦7</span>. Discards
+                      <span class="card spades">♠2</span>. Draws
+                      <span class="card hearts">♥10</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 2 (Tiger):):</strong> Hand:
+                      <span class="card clubs">♣3</span>,
+                      <span class="card hearts">♥A</span>,
+                      <span class="card clubs">♣6</span>,
+                      <span class="card hearts">♥J</span>,
+                      <span class="card hearts">♥4</span>. Discards
+                      <span class="card diamonds">♦10</span>. Draws
+                      <span class="card clubs">♣Q</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 3 (Zebra):):</strong> Hand:
+                      <span class="card hearts">♥5</span>,
+                      <span class="card diamonds">♦K</span>,
+                      <span class="card hearts">♥9</span>,
+                      <span class="card spades">♠Q</span>,
+                      <span class="card diamonds">♦7</span>,
+                      <span class="card hearts">♥10</span>. Discards
+                      <span class="card spades">♠Q</span>. Draws
+                      <span class="card diamonds">♦J</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 3 (Tiger):):</strong> Hand:
+                      <span class="card clubs">♣3</span>,
+                      <span class="card hearts">♥A</span>,
+                      <span class="card clubs">♣6</span>,
+                      <span class="card hearts">♥J</span>,
+                      <span class="card hearts">♥4</span>,
+                      <span class="card clubs">♣Q</span>. Tiger has 3 Hearts
+                      (counting Ace) and 3 Clubs. Sees Zebra discarding Spades
+                      and Diamonds. Says "Guess" and guesses "Hearts" for Zebra.
+                    </p>
+                    <p>
+                      Zebra reveals hand: <span class="card hearts">♥5</span>,
+                      <span class="card diamonds">♦K</span>,
+                      <span class="card hearts">♥9</span>,
+                      <span class="card diamonds">♦7</span>,
+                      <span class="card hearts">♥10</span>,
+                      <span class="card diamonds">♦J</span>. Zebra has 3 Hearts
+                      and 3 Diamonds. There is a tie for the majority suit.
+                      Tiger's guess was incorrect because of the tie. Tiger
+                      loses.
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <div id="pane-jack-attack" class="tab-pane" role="tabpanel" aria-labelledby="tab-jack-attack">
+              <div
+                id="pane-jack-attack"
+                class="tab-pane"
+                role="tabpanel"
+                aria-labelledby="tab-jack-attack"
+              >
                 <div class="example">
                   <h4>The Jack Attack</h4>
                   <div class="game-progression">
-                    <p>This game shows how playing a Jack can change the game.</p>
-                    <p><strong>Setup:</strong> Players Wolf and Eagle are playing. Wolf is dealer. Eagle goes first.</p>
-                    <p><strong>Hand 1 (Eagle):):</strong> Hand: <span class="card clubs">♣7</span>, <span class="card hearts">♥3</span>, <span class="card spades">♠K</span>, <span class="card diamonds">♦Q</span>, <span class="card clubs">♣9</span>, <span class="card hearts">♥A</span>. Discards <span class="card spades">♠K</span>. Draws <span class="card diamonds">♦5</span>.</p>
-                    <p><strong>Hand 1 (Wolf):):</strong> Hand: <span class="card spades">♠4</span>, <span class="card clubs">♣J</span>, <span class="card hearts">♥6</span>, <span class="card spades">♠10</span>, <span class="card clubs">♣2</span>. Discards <span class="card diamonds">♦8</span>. Draws <span class="card clubs">♣5</span>.</p>
-                    <p><strong>Hand 2 (Eagle):):</strong> Hand: <span class="card clubs">♣7</span>, <span class="card hearts">♥3</span>, <span class="card diamonds">♦Q</span>, <span class="card clubs">♣9</span>, <span class="card hearts">♥A</span>, <span class="card diamonds">♦5</span>. Discards <span class="card diamonds">♦Q</span>. Draws <span class="card hearts">♥7</span>.</p>
-                    <p><strong>Hand 2 (Wolf):):</strong> Hand: <span class="card spades">♠4</span>, <span class="card clubs">♣J</span>, <span class="card hearts">♥6</span>, <span class="card spades">♠10</span>, <span class="card clubs">♣2</span>, <span class="card clubs">♣5</span>. Wolf has the <span class="card clubs">♣J</span> and plays it on Eagle. Wolf draws <span class="card spades">♠9</span>. Eagle receives the <span class="card clubs">♣J</span> face-down.</p>
-                    <p><strong>Hand 3 (Eagle):):</strong> Hand: <span class="card clubs">♣7</span>, <span class="card hearts">♥3</span>, <span class="card clubs">♣9</span>, <span class="card hearts">♥A</span>, <span class="card diamonds">♦5</span>, <span class="card hearts">♥7</span>, <span class="card clubs">♣J</span> (face-down). Eagle cannot use the <span class="card clubs">♣J</span> this turn. Discards <span class="card hearts">♥3</span>. Draws <span class="card spades">♠Q</span>.</p>
-                    <p><strong>Hand 3 (Wolf):):</strong> Hand: <span class="card spades">♠4</span>, <span class="card hearts">♥6</span>, <span class="card spades">♠10</span>, <span class="card clubs">♣2</span>, <span class="card clubs">♣5</span>, <span class="card spades">♠9</span>. Discards <span class="card hearts">♥6</span>. Draws <span class="card diamonds">♦A</span>.</p>
-                    <p><strong>Hand 4 (Eagle):):</strong> Hand: <span class="card clubs">♣7</span>, <span class="card clubs">♣9</span>, <span class="card hearts">♥A</span>, <span class="card diamonds">♦5</span>, <span class="card hearts">♥7</span>, <span class="card clubs">♣J</span>, <span class="card spades">♠Q</span>. Eagle can now use the <span class="card clubs">♣J</span>. Discards <span class="card spades">♠Q</span>. Draws <span class="card hearts">♥K</span>.</p>
-                    <p><strong>Hand 4 (Wolf):):</strong> Hand: <span class="card spades">♠4</span>, <span class="card spades">♠10</span>, <span class="card clubs">♣2</span>, <span class="card clubs">♣5</span>, <span class="card spades">♠9</span>, <span class="card diamonds">♦A</span>. Wolf has 4 Spades, 1 Club, 1 Diamond (Ace counts as Diamond here for majority). Majority suit is Spades. Eagle guessed Hearts. Eagle is wrong and loses. Wolf wins!</p>
+                    <p>
+                      This game shows how playing a Jack can change the game.
+                    </p>
+                    <p>
+                      <strong>Setup:</strong> Players Wolf and Eagle are
+                      playing. Wolf is dealer. Eagle goes first.
+                    </p>
+                    <p>
+                      <strong>Hand 1 (Eagle):):</strong> Hand:
+                      <span class="card clubs">♣7</span>,
+                      <span class="card hearts">♥3</span>,
+                      <span class="card spades">♠K</span>,
+                      <span class="card diamonds">♦Q</span>,
+                      <span class="card clubs">♣9</span>,
+                      <span class="card hearts">♥A</span>. Discards
+                      <span class="card spades">♠K</span>. Draws
+                      <span class="card diamonds">♦5</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 1 (Wolf):):</strong> Hand:
+                      <span class="card spades">♠4</span>,
+                      <span class="card clubs">♣J</span>,
+                      <span class="card hearts">♥6</span>,
+                      <span class="card spades">♠10</span>,
+                      <span class="card clubs">♣2</span>. Discards
+                      <span class="card diamonds">♦8</span>. Draws
+                      <span class="card clubs">♣5</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 2 (Eagle):):</strong> Hand:
+                      <span class="card clubs">♣7</span>,
+                      <span class="card hearts">♥3</span>,
+                      <span class="card diamonds">♦Q</span>,
+                      <span class="card clubs">♣9</span>,
+                      <span class="card hearts">♥A</span>,
+                      <span class="card diamonds">♦5</span>. Discards
+                      <span class="card diamonds">♦Q</span>. Draws
+                      <span class="card hearts">♥7</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 2 (Wolf):):</strong> Hand:
+                      <span class="card spades">♠4</span>,
+                      <span class="card clubs">♣J</span>,
+                      <span class="card hearts">♥6</span>,
+                      <span class="card spades">♠10</span>,
+                      <span class="card clubs">♣2</span>,
+                      <span class="card clubs">♣5</span>. Wolf has the
+                      <span class="card clubs">♣J</span> and plays it on Eagle.
+                      Wolf draws <span class="card spades">♠9</span>. Eagle
+                      receives the
+                      <span class="card clubs">♣J</span> face-down.
+                    </p>
+                    <p>
+                      <strong>Hand 3 (Eagle):):</strong> Hand:
+                      <span class="card clubs">♣7</span>,
+                      <span class="card hearts">♥3</span>,
+                      <span class="card clubs">♣9</span>,
+                      <span class="card hearts">♥A</span>,
+                      <span class="card diamonds">♦5</span>,
+                      <span class="card hearts">♥7</span>,
+                      <span class="card clubs">♣J</span> (face-down). Eagle
+                      cannot use the <span class="card clubs">♣J</span> this
+                      turn. Discards <span class="card hearts">♥3</span>. Draws
+                      <span class="card spades">♠Q</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 3 (Wolf):):</strong> Hand:
+                      <span class="card spades">♠4</span>,
+                      <span class="card hearts">♥6</span>,
+                      <span class="card spades">♠10</span>,
+                      <span class="card clubs">♣2</span>,
+                      <span class="card clubs">♣5</span>,
+                      <span class="card spades">♠9</span>. Discards
+                      <span class="card hearts">♥6</span>. Draws
+                      <span class="card diamonds">♦A</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 4 (Eagle):):</strong> Hand:
+                      <span class="card clubs">♣7</span>,
+                      <span class="card clubs">♣9</span>,
+                      <span class="card hearts">♥A</span>,
+                      <span class="card diamonds">♦5</span>,
+                      <span class="card hearts">♥7</span>,
+                      <span class="card clubs">♣J</span>,
+                      <span class="card spades">♠Q</span>. Eagle can now use
+                      the <span class="card clubs">♣J</span>. Discards
+                      <span class="card spades">♠Q</span>. Draws
+                      <span class="card hearts">♥K</span>.
+                    </p>
+                    <p>
+                      <strong>Hand 4 (Wolf):):</strong> Hand:
+                      <span class="card spades">♠4</span>,
+                      <span class="card spades">♠10</span>,
+                      <span class="card clubs">♣2</span>,
+                      <span class="card clubs">♣5</span>,
+                      <span class="card spades">♠9</span>,
+                      <span class="card diamonds">♦A</span>. Wolf has 4 Spades,
+                      1 Club, 1 Diamond (Ace counts as Diamond here for
+                      majority). Majority suit is Spades. Eagle guessed Hearts.
+                      Eagle is wrong and loses. Wolf wins!
+                    </p>
                   </div>
                 </div>
               </div>
@@ -229,7 +783,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </main>
 
     <footer role="contentinfo">
-      <p>Made with ❤️ by Ember and Jude. Website vibe-coded with neutrality by AI.</p>
+      <p>
+        Made with ❤️ by Ember and Jude. Website vibe-coded with neutrality by
+        AI.
+      </p>
     </footer>
 
     <script src="script.js"></script>

@@ -1,24 +1,24 @@
-import eslintConfigPrettier from 'eslint-config-prettier';
+import js from '@eslint/js';
+import globals from 'globals';
+import prettier from 'eslint-config-prettier/flat';
 
 export default [
+  js.configs.recommended,
+  prettier,
   {
-    files: ["www/**/*.js"],
     languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
       globals: {
-        window: "readonly",
-        document: "readonly"
-      }
+        ...globals.browser,
+        ...globals.es2021
+      },
+      ecmaVersion: 2021,
+      sourceType: 'module'
     },
     rules: {
-      indent: ["error", 4],
-      "linebreak-style": ["error", "unix"],
-      quotes: ["error", "single"],
-      semi: ["error", "always"],
-      "no-unused-vars": "warn",
-      "no-console": "warn"
+      'no-unused-vars': 'warn',
+      'no-console': 'warn',
+      'no-undef': 'error',
+      'semi': ['error', 'always']
     }
-  },
-  eslintConfigPrettier
+  }
 ]; 

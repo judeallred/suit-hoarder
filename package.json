@@ -5,15 +5,10 @@
     "description": "Card game rules website",
     "main": "index.js",
     "scripts": {
-        "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
-        "lint:js": "eslint www",
-        "lint:css": "stylelint \"www/**/*.css\"",
-        "lint:html": "htmlhint \"www/**/*.html\"",
+        "lint": "eslint www/**/*.js",
         "prettier": "prettier --write \"www/**/*.{js,css,html}\"",
-        "autofix": "npm run autofix:js && npm run autofix:css && npm run autofix:html && npm run prettier",
+        "autofix": "npm run autofix:js && npm run prettier",
         "autofix:js": "eslint www --fix",
-        "autofix:css": "stylelint \"www/**/*.css\" --fix",
-        "autofix:html": "htmlhint \"www/**/*.html\" || exit 0",
         "prepare": "husky install",
         "dev": "live-server --port=3000 --open=index.html www"
     },
@@ -22,33 +17,18 @@
             "eslint --fix",
             "prettier --write",
             "git add"
-        ],
-        "www/*.css": [
-            "stylelint --fix",
-            "prettier --write",
-            "git add"
-        ],
-        "www/*.html": [
-            "htmlhint",
-            "prettier --write",
-            "git add"
         ]
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "@commitlint/cli": "^18.0.0",
-        "@commitlint/config-conventional": "^18.0.0",
         "eslint": "^8.0.0",
         "eslint-config-prettier": "^10.1.5",
-        "htmlhint": "^1.0.0",
+        "globals": "^16.2.0",
         "husky": "^8.0.0",
         "lint-staged": "^13.0.0",
         "live-server": "^1.2.2",
-        "prettier": "^3.0.0",
-        "stylelint": "^15.0.0",
-        "stylelint-config-prettier": "^9.0.5",
-        "stylelint-config-standard": "^34.0.0"
+        "prettier": "^3.0.0"
     }
 }

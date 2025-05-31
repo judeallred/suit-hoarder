@@ -1,33 +1,33 @@
 /* Custom Properties */
 :root {
   /* Colors */
-  --color-primary: #FF6B6B;
-  --color-secondary: #4ECDC4;
-  --color-accent: #FFE66D;
-  --color-background: #F7F9FC;
-  --color-text: #2C3E50;
-  --color-clubs: #2C3E50;
-  --color-diamonds: #E74C3C;
-  --color-hearts: #E74C3C;
-  --color-spades: #2C3E50;
-  
+  --color-primary: #ff6b6b;
+  --color-secondary: #4ecdc4;
+  --color-accent: #ffe66d;
+  --color-background: #f7f9fc;
+  --color-text: #2c3e50;
+  --color-clubs: #2c3e50;
+  --color-diamonds: #e74c3c;
+  --color-hearts: #e74c3c;
+  --color-spades: #2c3e50;
+
   /* Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
-  
+
   /* Typography */
   --font-size-base: 16px;
   --font-size-h1: 2rem;
   --font-size-h2: 1.5rem;
   --font-size-h3: 1.25rem;
   --line-height: 1.6;
-  
+
   /* Border Radius */
   --border-radius: 12px;
-  
+
   /* Shadows */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -46,7 +46,9 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, sans-serif;
   line-height: var(--line-height);
   color: var(--color-text);
   background-color: var(--color-background);
@@ -65,7 +67,11 @@ header {
   margin-bottom: 2rem;
   border-radius: 1rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   color: white;
   box-shadow: var(--shadow-md);
 }
@@ -102,7 +108,8 @@ section {
 }
 
 /* List styles */
-ul, ol {
+ul,
+ol {
   padding-left: var(--spacing-md);
   margin: var(--spacing-sm) 0;
 }
@@ -126,10 +133,18 @@ li {
   font-weight: bold;
 }
 
-.clubs { color: var(--color-clubs); }
-.diamonds { color: var(--color-diamonds); }
-.hearts { color: var(--color-hearts); }
-.spades { color: var(--color-spades); }
+.clubs {
+  color: var(--color-clubs);
+}
+.diamonds {
+  color: var(--color-diamonds);
+}
+.hearts {
+  color: var(--color-hearts);
+}
+.spades {
+  color: var(--color-spades);
+}
 
 /* Card list */
 .card-list li {
@@ -277,11 +292,13 @@ details summary:hover {
   border-radius: 3px;
 }
 
-.card.hearts, .card.diamonds {
+.card.hearts,
+.card.diamonds {
   color: var(--color-hearts);
 }
 
-.card.spades, .card.clubs {
+.card.spades,
+.card.clubs {
   color: var(--color-spades);
 }
 
@@ -350,8 +367,8 @@ details summary:hover {
 }
 
 .tab-button.active {
-  color: #2C3E50;
-  border-bottom: 2px solid #2C3E50;
+  color: #2c3e50;
+  border-bottom: 2px solid #2c3e50;
   margin-bottom: -2px;
   font-weight: 500;
 }
@@ -410,12 +427,14 @@ details summary:hover {
   margin: 0 0.1rem;
 }
 
-.card.clubs, .card.spades {
-  color: #2C3E50;
+.card.clubs,
+.card.spades {
+  color: #2c3e50;
 }
 
-.card.hearts, .card.diamonds {
-  color: #E74C3C;
+.card.hearts,
+.card.diamonds {
+  color: #e74c3c;
 }
 
 .cardfield-background {
